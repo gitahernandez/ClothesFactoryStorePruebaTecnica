@@ -10,6 +10,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+
 import org.apache.log4j.Logger;
 
 import clothesFactoryStore.dto.CiudadesEnvioDTO;
@@ -21,6 +22,8 @@ import clothesFactoryStore.transaction.ClothesFactoryStoreFacadeBean;
 
 
 /**
+ * 
+ * 
  * Clase ClothesFactoryStoreWebServices
  *
  * Exposición de WebServices
@@ -61,6 +64,7 @@ public class ClothesFactoryStoreWebServices {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public RespuestaPedidoDTO setPedido(PedidoDTO pedidoDto) {
+		
 		RespuestaPedidoDTO respuestaPedidoDTO = new RespuestaPedidoDTO();
 		try {
 			
@@ -89,11 +93,12 @@ public class ClothesFactoryStoreWebServices {
 		catch (Exception e) {
 			log.error("Error obteniendo la información de las prendas : "+e);
 		}
+		
 		return listPrendaRopaDTO;	
 	}
 	
 	@Path("/getCiudadesEnvio")
-	@POST
+	@GET
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public ArrayList<CiudadesEnvioDTO> getCiudadesEnvio() {
