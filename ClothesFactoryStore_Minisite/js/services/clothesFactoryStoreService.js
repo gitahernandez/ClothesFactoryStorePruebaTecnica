@@ -60,111 +60,111 @@ clothesFactoryStoreApp.factory('clothesFactoryStoreService', function ($http, $q
                 .error(function (error, status){
                     var obj = [
                                     {
-                                        "coloresDisponiles": [
-                                            "AZUL",
-                                            "ROJO",
-                                            "VERDE"
-                                        ],
-                                        "costoConEnvio": 0,
-                                        "costoSinEnvio": 40000,
-                                        "existenciasEnInventario": true,
                                         "id": 1,
+                                        "costoSinEnvio": 30000,
+                                        "costoConEnvio": 0,
                                         "idTipo": 1,
-                                        "nombre": "CAMISA MANGA LARGA",
+                                        "existenciasEnInventario": true,
+                                        "nombre": "CAMISA MANGA LARGA SLIM",
                                         "tallasDisponibles": [
                                             "S",
                                             "M",
                                             "L"
-                                        ]
-                                    },
-                                    {
+                                        ],
                                         "coloresDisponiles": [
                                             "AZUL",
                                             "ROJO",
                                             "VERDE"
-                                        ],
-                                        "costoConEnvio": 0,
-                                        "costoSinEnvio": 55000,
-                                        "existenciasEnInventario": true,
+                                        ]
+                                    },
+                                    {
                                         "id": 2,
-                                        "idTipo": 2,
-                                        "nombre": "PANTALON CORTO",
+                                        "costoSinEnvio": 45000,
+                                        "costoConEnvio": 0,
+                                        "idTipo": 1,
+                                        "existenciasEnInventario": true,
+                                        "nombre": "CAMISA MANGA CORTA",
                                         "tallasDisponibles": [
                                             "S",
                                             "M",
                                             "L"
-                                        ]
-                                    },
-                                    {
+                                        ],
                                         "coloresDisponiles": [
                                             "AZUL",
                                             "ROJO",
                                             "VERDE"
-                                        ],
-                                        "costoConEnvio": 0,
-                                        "costoSinEnvio": 100000,
-                                        "existenciasEnInventario": true,
+                                        ]
+                                    },
+                                    {
                                         "id": 3,
-                                        "idTipo": 3,
-                                        "nombre": "CHAQUETA",
+                                        "costoSinEnvio": 120000,
+                                        "costoConEnvio": 0,
+                                        "idTipo": 2,
+                                        "existenciasEnInventario": true,
+                                        "nombre": "PANTALON ELEGANTE",
                                         "tallasDisponibles": [
                                             "S",
                                             "M",
                                             "L"
-                                        ]
-                                    },
-                                     {
+                                        ],
                                         "coloresDisponiles": [
                                             "AZUL",
                                             "ROJO",
                                             "VERDE"
-                                        ],
-                                        "costoConEnvio": 0,
-                                        "costoSinEnvio": 100000,
-                                        "existenciasEnInventario": true,
-                                        "id": 4,
-                                        "idTipo": 3,
-                                        "nombre": "CHAQUETA",
-                                        "tallasDisponibles": [
-                                            "S",
-                                            "M",
-                                            "L"
-                                        ]
-                                    },
-                                     {
-                                        "coloresDisponiles": [
-                                            "AZUL",
-                                            "ROJO",
-                                            "VERDE"
-                                        ],
-                                        "costoConEnvio": 0,
-                                        "costoSinEnvio": 100000,
-                                        "existenciasEnInventario": true,
-                                        "id": 5,
-                                        "idTipo": 3,
-                                        "nombre": "CHAQUETA",
-                                        "tallasDisponibles": [
-                                            "S",
-                                            "M",
-                                            "L"
                                         ]
                                     },
                                     {
-                                        "coloresDisponiles": [
-                                            "AZUL",
-                                            "ROJO",
-                                            "VERDE"
-                                        ],
+                                        "id": 4,
+                                        "costoSinEnvio": 70000,
                                         "costoConEnvio": 0,
-                                        "costoSinEnvio": 100000,
+                                        "idTipo": 2,
                                         "existenciasEnInventario": true,
-                                        "id": 6,
-                                        "idTipo": 3,
-                                        "nombre": "CHAQUETA",
+                                        "nombre": "PANTALON POCO FORMAL",
                                         "tallasDisponibles": [
                                             "S",
                                             "M",
                                             "L"
+                                        ],
+                                        "coloresDisponiles": [
+                                            "AZUL",
+                                            "ROJO",
+                                            "VERDE"
+                                        ]
+                                    },
+                                    {
+                                        "id": 5,
+                                        "costoSinEnvio": 250000,
+                                        "costoConEnvio": 0,
+                                        "idTipo": 3,
+                                        "existenciasEnInventario": true,
+                                        "nombre": "CHAQUETA EN CUERO",
+                                        "tallasDisponibles": [
+                                            "S",
+                                            "M",
+                                            "L"
+                                        ],
+                                        "coloresDisponiles": [
+                                            "AZUL",
+                                            "ROJO",
+                                            "VERDE"
+                                        ]
+                                    },
+                                    {
+                                        "id": 6,
+                                        "costoSinEnvio": 356000,
+                                        "costoConEnvio": 0,
+                                        "idTipo": 3,
+                                        "existenciasEnInventario": true,
+                                        "nombre": "CHAQUETA DE INVIERNO",
+                                        "tallasDisponibles": [
+                                            "S",
+                                            "M",
+                                            "L"
+                                        ],
+                                        "coloresDisponiles": [
+                                            "AZUL",
+                                            "ROJO",
+                                            "VERDE"
                                         ]
                                     }
                                 ];

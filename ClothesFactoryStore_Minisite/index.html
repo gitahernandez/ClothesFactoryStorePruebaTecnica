@@ -173,6 +173,7 @@
                   <th>Cantidad</th>
                   <th>Talla</th>
                   <th>Costo sin Envío</th>
+                  <th>Total</th>
   
                   <th></th>
                 </tr>
@@ -184,12 +185,14 @@
 	                  <td>{{itempedido.cantidad}}</td>
 	                  <td>{{itempedido.talla}}</td>
 	                  <td>{{itempedido.costoSinEnvio | currency:"$":0}}</td>
+	                  <td>{{itempedido.cantidad * itempedido.costoSinEnvio  | currency:"$":0}}</td>
 	             
 	                  <td><button ng-click="eliminarItemdeCarrito(itempedido)" class="btn btn-primary">Eliminar</button></td>
 	                </tr>
 
 	               <tr >
 	                <td></td>
+	                  <td></td>
 	                  <td></td>
 	                  <td></td>
 	                  <td><h7>Total sin Envío<h7></td>
@@ -202,6 +205,7 @@
 	                <td></td>
 	                  <td></td>
 	                  <td></td>
+	                   <td></td>
 	                  <td><h7>Costo del Envío a {{pedido.ciudadEnvioDTO.nombre}}<h7></td>
 	                  <td>{{pedido.ciudadEnvioDTO.costoEnvio| currency:"$":0}}</td>
 	            
@@ -212,8 +216,9 @@
 	                <td></td>
 	                  <td></td>
 	                  <td></td>
+	                   <td></td>
 	                  <td><h5>Total<h5></td>
-	                  <td>{{pedido.costoTotalConEnvio| currency:"$":0}}</td>
+	                  <td><h5>{{pedido.costoTotalConEnvio| currency:"$":0}}</h5></td>
 	            
 	                </tr>
 

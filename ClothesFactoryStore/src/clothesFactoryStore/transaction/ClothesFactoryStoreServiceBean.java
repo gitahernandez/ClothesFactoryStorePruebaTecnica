@@ -29,9 +29,28 @@ public class ClothesFactoryStoreServiceBean {
 		
 		PrendaRopaDTO prendaRopaDTO =  new PrendaRopaDTO();
 		prendaRopaDTO.setId(1);
-		prendaRopaDTO.setCostoSinEnvio(40000);
+		prendaRopaDTO.setCostoSinEnvio(30000);
 		prendaRopaDTO.setExistenciasEnInventario(true);
-		prendaRopaDTO.setNombre("CAMISA MANGA LARGA");
+		prendaRopaDTO.setNombre("CAMISA MANGA LARGA SLIM");
+		prendaRopaDTO.setIdTipo(1);
+		tallas.add("S");
+		tallas.add("M");
+		tallas.add("L");
+		colores.add("AZUL");
+		colores.add("ROJO");
+		colores.add("VERDE");
+		prendaRopaDTO.setTallasDisponibles(tallas);
+		prendaRopaDTO.setColoresDisponiles(colores);
+		listPrendaRopaDTO.add(prendaRopaDTO);
+		
+		
+		prendaRopaDTO =  new PrendaRopaDTO();
+		tallas = new ArrayList<String>();
+		colores = new ArrayList<String>();
+		prendaRopaDTO.setId(2);
+		prendaRopaDTO.setCostoSinEnvio(45000);
+		prendaRopaDTO.setExistenciasEnInventario(true);
+		prendaRopaDTO.setNombre("CAMISA MANGA CORTA");
 		prendaRopaDTO.setIdTipo(1);
 		tallas.add("S");
 		tallas.add("M");
@@ -46,10 +65,10 @@ public class ClothesFactoryStoreServiceBean {
 		prendaRopaDTO =  new PrendaRopaDTO();
 		tallas = new ArrayList<String>();
 		colores = new ArrayList<String>();
-		prendaRopaDTO.setId(2);
-		prendaRopaDTO.setCostoSinEnvio(55000);
+		prendaRopaDTO.setId(3);
+		prendaRopaDTO.setCostoSinEnvio(120000);
 		prendaRopaDTO.setExistenciasEnInventario(true);
-		prendaRopaDTO.setNombre("PANTALON CORTO");
+		prendaRopaDTO.setNombre("PANTALON ELEGANTE");
 		prendaRopaDTO.setIdTipo(2);
 		tallas.add("S");
 		tallas.add("M");
@@ -65,10 +84,47 @@ public class ClothesFactoryStoreServiceBean {
 		prendaRopaDTO =  new PrendaRopaDTO();
 		tallas = new ArrayList<String>();
 		colores = new ArrayList<String>();
-		prendaRopaDTO.setId(3);
-		prendaRopaDTO.setCostoSinEnvio(100000);
+		prendaRopaDTO.setId(4);
+		prendaRopaDTO.setCostoSinEnvio(70000);
 		prendaRopaDTO.setExistenciasEnInventario(true);
-		prendaRopaDTO.setNombre("CHAQUETA");
+		prendaRopaDTO.setNombre("PANTALON POCO FORMAL");
+		prendaRopaDTO.setIdTipo(2);
+		tallas.add("S");
+		tallas.add("M");
+		tallas.add("L");
+		colores.add("AZUL");
+		colores.add("ROJO");
+		colores.add("VERDE");
+		prendaRopaDTO.setTallasDisponibles(tallas);
+		prendaRopaDTO.setColoresDisponiles(colores);
+		listPrendaRopaDTO.add(prendaRopaDTO);
+	
+		
+		prendaRopaDTO =  new PrendaRopaDTO();
+		tallas = new ArrayList<String>();
+		colores = new ArrayList<String>();
+		prendaRopaDTO.setId(5);
+		prendaRopaDTO.setCostoSinEnvio(250000);
+		prendaRopaDTO.setExistenciasEnInventario(true);
+		prendaRopaDTO.setNombre("CHAQUETA EN CUERO");
+		prendaRopaDTO.setIdTipo(3);
+		tallas.add("S");
+		tallas.add("M");
+		tallas.add("L");
+		colores.add("AZUL");
+		colores.add("ROJO");
+		colores.add("VERDE");
+		prendaRopaDTO.setTallasDisponibles(tallas);
+		prendaRopaDTO.setColoresDisponiles(colores);
+		listPrendaRopaDTO.add(prendaRopaDTO);
+		
+		prendaRopaDTO =  new PrendaRopaDTO();
+		tallas = new ArrayList<String>();
+		colores = new ArrayList<String>();
+		prendaRopaDTO.setId(6);
+		prendaRopaDTO.setCostoSinEnvio(356000);
+		prendaRopaDTO.setExistenciasEnInventario(true);
+		prendaRopaDTO.setNombre("CHAQUETA DE INVIERNO");
 		prendaRopaDTO.setIdTipo(3);
 		tallas.add("S");
 		tallas.add("M");

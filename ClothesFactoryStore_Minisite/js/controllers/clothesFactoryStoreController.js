@@ -19,7 +19,7 @@ clothesFactoryStoreApp.controller('clothesFactoryStoreController', function($sco
   
 
  $scope.url  = "http://localhost:9089";
- 
+
  $scope.cargar = function()
  {	
 
@@ -115,7 +115,7 @@ $scope.calcularTotales =  function(){
 $scope.calcularCostoTotalSinEnvio = function(){
 	$scope.pedido.costoTotalSinEnvio = 0;
   	 angular.forEach($scope.pedido.listaItemPedidoDTO, function(itemPedido, index) {
-  	 	$scope.pedido.costoTotalSinEnvio = $scope.pedido.costoTotalSinEnvio + itemPedido.costoSinEnvio;
+  	 	$scope.pedido.costoTotalSinEnvio = $scope.pedido.costoTotalSinEnvio + ( itemPedido.costoSinEnvio * itemPedido.cantidad) ;
   	 	});
   	 
 }
@@ -131,8 +131,11 @@ else{
 	$scope.errorFormulario = false;
 	$scope.enviado = true;
 }
+ clothesFactoryStoreService.setPedido($scope.url,$scope.pedido).then(function(data){
+                            console.log(data);
+                            console.log("Respuesta sel derver "+$scope.pedido);
+                        });
 
-console.log($scope.pedido);
 }
 
 
@@ -146,7 +149,7 @@ console.log($scope.pedido);
   	 	}
   	 	});
   	 
-	$scope.calcularCostoTotalSinEnvio();
+	$scope.calcularTotales();
 
 }
 
