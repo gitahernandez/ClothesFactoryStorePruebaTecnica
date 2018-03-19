@@ -1,0 +1,1 @@
+var indicadoresFinancierosApp = angular.module('indicadoresFinancierosApp', ['ui.router']);

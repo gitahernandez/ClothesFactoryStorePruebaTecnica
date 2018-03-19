@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es"  >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+	
+	<title>Clothes Factory Store</title>
+
+	
+    <script src="js/lib/angular.js"></script>	
+
+	<script type="text/javascript">
+  		var clothesFactoryStoreApp = angular.module('clothesFactoryStoreApp',[]);
+	</script>
+
+	<!-- App Script -->    
+    <script src="js/factory/clothesFactoryStoreFactory.js"></script>
+
+      <!-- Controllers -->
+    <script src="js/controllers/clothesFactoryStoreController.js"></script>
+
+      <!-- Services -->
+    <script src="js/services/clothesFactoryStoreService.js"></script>
+
+        <!-- Bootstrap core CSS -->
+    <link href="bootstrap-4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+</head>
+<body ng-app="clothesFactoryStoreApp" >
+
+
+<body>
+
+  
+
+    <main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+        	 <img class="rounded-circle" src="images/logo.jpg" alt="Generic placeholder image" width="140" height="140">
+          <p class="display-3">Clothes Factory Store, Bienvenidos</p>
+
+         Somos una empresa de gran prestigio, fundada en 24.12.1992, con una amplia experiencia de 30 años en el sector de la moda. Disponemos de cuatro tiendas y le ofrecemos una amplia gama de ropa, complementos y accesorios de alta calidad a precios competitivos.
+
+      
+           
+     
+   
+        </div>
+      </div>
+
+      <div class="container">
+    
+
+        <hr>
+
+      </div> <!-- /container -->
+
+    </main>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<div  ng-controller="clothesFactoryStoreController" >
+
+		<div class="row">
+			<div class="container">
+     			 <div class="card-deck mb-3 text-center">
+     			 		  <h2>Haga su pedido, tenemos los siguientes productos para usted:</h2>
+     			 		  <br>
+     			 		    <br>
+		            <div ng-repeat="prenda in prendasVenta" class="col-md-4">
+					          <div class="card mb-4 box-shadow">
+					                <div class="card mb-4 box-shadow">
+								          <div class="card-header">
+								            <h4 class="my-0 font-weight-normal">{{prenda.nombre}}</h4>
+								             <h6 class="my-0 font-weight-normal">{{prenda.tipoNombre}}</h6>
+								          </div>
+									          <div class="card-body">
+									            <h1 class="card-title pricing-card-title">{{prenda.costoSinEnvio | currency:"$":0}}<small class="text-muted">/ Costo Sin Envio</small></h1>
+									     
+									           
+												Tallas Disponibles :
+													<select ng-model="prenda.talla" ng-init="prenda.talla = prenda.tallasDisponibles[0]" class="form-control">
+														<option value="{{talla}}" ng-repeat="talla in prenda.tallasDisponibles" >{{talla}}<option>
+													 </select>
+												Colores Disponibles :	 	
+													 <select ng-model="prenda.color" ng-init="prenda.color = prenda.coloresDisponiles[0]"  class="form-control">
+														<option value="{{color}}" ng-repeat="color in prenda.coloresDisponiles" >{{color}}<option>
+													 </select>
+												<label>Cantidad : </label>
+									        	 <select ng-model="prenda.cantidad"    class="form-control">
+														<option ng-repeat="cantidad in cantidades" value="{{cantidad}}" >{{cantidad}}</option>
+											
+													 </select>
+													 <hr>
+									            <button type="button" ng-click="agregarAlCarrito(prenda)"   class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Agregar a la compra</button>
+									          </div>
+					        		</div>
+		              		</div>
+		            </div> 
+		         </div> 
+		       </div> 
+		</div>
+
+		
+
+
+
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		      	<h3>Clothes Factory Store<h3>
+		        <h5 class="modal-title" id="exampleModalLabel">Carrito de Compras</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+
+
+
+
+				<div class="table-responsive">
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Prenda</th>
+                  <th>Cantidad</th>
+                  <th>Talla</th>
+                  <th>Costo sin Envío</th>
+  
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+	                <tr ng-repeat="itempedido in pedido.listaItemPedidoDTO">
+	                <td>{{$index + 1}}</td>
+	                  <td>{{itempedido.nombrePrendaDTO}} / {{itempedido.color}}</td>
+	                  <td>{{itempedido.cantidad}}</td>
+	                  <td>{{itempedido.talla}}</td>
+	                  <td>{{itempedido.costoSinEnvio | currency:"$":0}}</td>
+	             
+	                  <td><button ng-click="eliminarItemdeCarrito(itempedido)" class="btn btn-primary">Eliminar</button></td>
+	                </tr>
+
+	               <tr >
+	                <td></td>
+	                  <td></td>
+	                  <td></td>
+	                  <td><h7>Total sin Envío<h7></td>
+	                  <td>{{pedido.costoTotalSinEnvio | currency:"$":0}}</td>
+	            
+	                </tr>
+
+
+	                 <tr >
+	                <td></td>
+	                  <td></td>
+	                  <td></td>
+	                  <td><h7>Costo del Envío a {{pedido.ciudadEnvioDTO.nombre}}<h7></td>
+	                  <td>{{pedido.ciudadEnvioDTO.costoEnvio| currency:"$":0}}</td>
+	            
+	                </tr>
+
+
+	                 <tr >
+	                <td></td>
+	                  <td></td>
+	                  <td></td>
+	                  <td><h5>Total<h5></td>
+	                  <td>{{pedido.costoTotalConEnvio| currency:"$":0}}</td>
+	            
+	                </tr>
+
+              </tbody>
+            </table>
+
+            <div ng-show="yaExiste" class="alert alert-primary" role="alert">
+ 				 El producto ya fue agregado, si quieres agregarlo nuevamente, por favor primero eliminalo.
+			</div>
+
+			<div ng-show="maximo5prendas" class="alert alert-danger" role="alert">
+ 				Usted puede agregar máximo 5 prendas.
+			</div>
+			<div ng-show="enviado" class="alert alert-success" role="alert">
+ 				El pedido se envió correctamente.
+			</div>
+
+			<h4>Datos De Cliente y de Envío</h4>
+
+			 <h6>* Nombre : </h6>
+        	 <input ng-model="pedido.nombreCliente" class="form-control" type="" name="">
+
+			 <h6>* Documento </h6>
+        	  <input ng-model="pedido.documento" class="form-control" type="" name="">
+
+             <h6>* Seleccione tipo documento : </h6>
+        	 <select ng-model="pedido.tipoDocumento" class="form-control">
+
+
+        	
+					<option value="CC">CC</option>
+					<option value="TI">TI</option>
+					<option value="CE">CE</option>
+	
+			</select>
+
+
+			 <h6>* Dirección Envío </h6>
+        	   <input ng-model="pedido.direccion" class="form-control" type="" name="">
+
+			 <h6>* Seleccione Ciudad Envío : </h6>
+        	 <select ng-init="ciudadEnvio = ciudadesEnvio[0].codigo" ng-change="calcularTotales()" ng-model="ciudadEnvio"   class="form-control">
+        	 
+					<option ng-repeat="ciudad in ciudadesEnvio" value="{{ciudad.codigo}}" >{{ciudad.nombre}}</option>
+	
+			</select>
+			<br>
+
+			 <div ng-show="errorFormulario" class="alert alert-danger" role="alert">
+ 				Por favor , diligencie todo el formulario e inténtelo de nuevo.
+			</div>
+
+		
+
+  
+
+			</div>	
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Atrás</button>
+		        <button ng-click="enviarPedido()" ng-disabled="pedido.listaItemPedidoDTO.length < 1 || listoEnviar == false" type="button" class="btn btn-primary">Enviar Pedido</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+<hr>
+
+  <footer class="container">
+      <p>© Clothes Factory Store 2018 / Telefono: 3212880394 / contactenos@clothesfactoryStrore.com.co</p>
+    </footer>
+
+  
+
+
+	</div>
+
+	<script src="bootstrap-4.0.0/assets/js/vendor/jquery-slim.min.js"></script>
+    <script src="bootstrap-4.0.0/assets/js/vendor/popper.min.js"></script>
+    <script src="bootstrap-4.0.0/js/dist/util.js"></script>
+    <script src="bootstrap-4.0.0/js/dist/modal.js"></script>
+    <script src="bootstrap-4.0.0/js/dist/collapse.js"></script>
+    <script src="bootstrap-4.0.0/js/dist/tooltip.js"></script>
+    <script src="bootstrap-4.0.0/js/dist/popover.js"></script>
+
+
+
+</body>
+</html>
+
+
