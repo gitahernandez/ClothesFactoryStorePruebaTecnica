@@ -13,6 +13,13 @@ import javax.ws.rs.core.MediaType;
 
 import org.apache.log4j.Logger;
 
+
+
+
+
+
+
+
 import clothesFactoryStore.dto.CiudadesEnvioDTO;
 import clothesFactoryStore.dto.ListaDTO;
 import clothesFactoryStore.dto.PedidoDTO;
@@ -26,7 +33,7 @@ import clothesFactoryStore.transaction.ClothesFactoryStoreFacadeBean;
  * 
  * Clase ClothesFactoryStoreWebServices
  *
- * Exposición de WebServices
+ * ExposiciÃ³n de WebServices
  * 
  *
  * @author AndresHernandez
@@ -91,7 +98,7 @@ public class ClothesFactoryStoreWebServices {
 			listPrendaRopaDTO = clothesFactoryStoreFacadeBean.getPrendasVenta();
 		}
 		catch (Exception e) {
-			log.error("Error obteniendo la información de las prendas : "+e);
+			log.error("Error obteniendo la informaciÃ³n de las prendas : "+e);
 		}
 		
 		return listPrendaRopaDTO;	
@@ -107,7 +114,7 @@ public class ClothesFactoryStoreWebServices {
 			listaciudadesEnvioDTO = clothesFactoryStoreFacadeBean.getCiudadesEnvio();
 		}
 		catch (Exception e) {
-			log.error("Error obteniendo la información de las prendas : "+e);
+			log.error("Error obteniendo la informaciÃ³n de las prendas : "+e);
 		}
 		return listaciudadesEnvioDTO;	
 	}
